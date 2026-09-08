@@ -65,31 +65,33 @@ export function Gallery({ images }: GalleryProps) {
             <X className="size-5" />
           </button>
 
-          <div className="relative flex items-center justify-center">
-            <img
-              src={images[index].src}
-              alt={images[index].alt}
-              className="max-h-[80vh] w-full object-contain"
-            />
+          {images[index] && (
+            <div className="relative flex items-center justify-center">
+              <img
+                src={images[index].src}
+                alt={images[index].alt}
+                className="max-h-[80vh] w-full object-contain"
+              />
 
-            <button
-              type="button"
-              onClick={showPrev}
-              className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-foreground transition-colors hover:bg-black/70"
-              aria-label="Vorheriges Bild"
-            >
-              <ChevronLeft className="size-6" />
-            </button>
+              <button
+                type="button"
+                onClick={showPrev}
+                className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-foreground transition-colors hover:bg-black/70"
+                aria-label="Vorheriges Bild"
+              >
+                <ChevronLeft className="size-6" />
+              </button>
 
-            <button
-              type="button"
-              onClick={showNext}
-              className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-foreground transition-colors hover:bg-black/70"
-              aria-label="Nächstes Bild"
-            >
-              <ChevronRight className="size-6" />
-            </button>
-          </div>
+              <button
+                type="button"
+                onClick={showNext}
+                className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-foreground transition-colors hover:bg-black/70"
+                aria-label="Nächstes Bild"
+              >
+                <ChevronRight className="size-6" />
+              </button>
+            </div>
+          )}
 
           <div className="flex justify-center gap-2 pb-4">
             {images.map((_, i) => (
