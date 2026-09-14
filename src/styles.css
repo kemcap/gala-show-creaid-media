@@ -40,6 +40,7 @@
   --color-gold-soft: var(--gold-soft);
   --color-charcoal: var(--charcoal);
   --color-charcoal-light: var(--charcoal-light);
+  --color-whatsapp: var(--whatsapp);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -87,7 +88,8 @@
   --gold: oklch(0.72 0.14 80);
   --gold-soft: oklch(0.82 0.1 85);
   --charcoal: oklch(0.14 0.01 285);
-  --charcoal-light: oklch(0.22 0.015 285);
+  --charcoal-light: oklch(0.22 0.015 285yka
+  --whatsapp: #25D366;
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "DM Sans", sans-serif;
