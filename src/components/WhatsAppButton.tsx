@@ -13,7 +13,7 @@ export function WhatsAppButton() {
       {/* Sprechblasen-Schwanz unten rechts */}
       <span
         aria-hidden="true"
-        className="absolute bottom-0.5 right-0.5 size-3.5 rotate-45 rounded-[3px] bg-whatsapp"
+        className="absolute bottom-1 right-1 size-2.5 rotate-45 rounded-[2px] bg-whatsapp"
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"
