@@ -18,7 +18,7 @@ import {
 import { useEffect, useState } from "react";
 
 
-import heroImageAsset from "@/assets/hero-hotel.jpg.asset.json";
+import heroImageAsset from "@/assets/hero-hotel.webp.asset.json";
 const heroImage = heroImageAsset.url;
 import serviceRentalImage from "@/assets/service-rental.jpg";
 import serviceShowsImage from "@/assets/service-shows.jpg";
