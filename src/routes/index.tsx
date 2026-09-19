@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import heroImage from "@/assets/hero.jpg";
+import heroImageAsset from "@/assets/hero-hotel.jpg.asset.json";
+const heroImage = heroImageAsset.url;
 import serviceRentalImage from "@/assets/service-rental.jpg";
 import serviceShowsImage from "@/assets/service-shows.jpg";
 import serviceEventsImage from "@/assets/service-events.jpg";
@@ -203,10 +204,8 @@ function Index() {
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="Spektakuläre Bühneneffekte mit Feuer und Funken"
+            alt="Fontänen und Flammen vor dem Hotel Kap-Haus bei Nacht"
             className="h-full w-full object-cover"
-            width={1920}
-            height={1088}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
