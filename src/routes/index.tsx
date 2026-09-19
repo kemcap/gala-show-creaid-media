@@ -15,7 +15,8 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 
 import heroImageAsset from "@/assets/hero-hotel.jpg.asset.json";
 const heroImage = heroImageAsset.url;
@@ -133,6 +134,23 @@ const references = [
 
 function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setScrollY(window.scrollY));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
 
   const navLinks = [
     { href: "#services", label: "Leistungen" },
@@ -205,7 +223,8 @@ function Index() {
           <img
             src={heroImage}
             alt="Fontänen und Flammen vor dem Hotel Kap-Haus bei Nacht"
-            className="h-full w-full object-cover"
+            className="h-[120%] w-full object-cover will-change-transform"
+            style={{ transform: `translateY(${Math.min(scrollY * 0.25, 320)}px)` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
