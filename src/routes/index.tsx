@@ -223,7 +223,8 @@ function Index() {
           <img
             src={heroImage}
             alt="Fontänen und Flammen vor dem Hotel Kap-Haus bei Nacht"
-            className="h-full w-full object-cover"
+            className="h-[120%] w-full object-cover will-change-transform"
+            style={{ transform: `translateY(${Math.min(scrollY * 0.25, 320)}px)` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
