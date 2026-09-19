@@ -236,7 +236,7 @@ function Index() {
           <h1 className="mx-auto max-w-4xl text-balance font-display text-5xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             Der Wow-Moment für Ihre Veranstaltung
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-balance text-lg text-white/90 sm:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-balance text-lg text-foreground/90 sm:text-xl">
             Professionelle Fontänen, Feuerbälle, Bodennebel und Konfetti für
             Hochzeiten, Stadtfeste, Konzerte und große Bühnen — mit bis zu 30
             Maschinen und erfahrenem Fachpersonal.
