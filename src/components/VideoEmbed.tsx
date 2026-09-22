@@ -4,9 +4,10 @@ import { Play } from "lucide-react";
 interface VideoEmbedProps {
   videoId: string;
   title?: string;
+  start?: number;
 }
 
-export function VideoEmbed({ videoId, title = "Showreel" }: VideoEmbedProps) {
+export function VideoEmbed({ videoId, title = "Showreel", start = 0 }: VideoEmbedProps) {
   const [loaded, setLoaded] = useState(false);
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
@@ -33,7 +34,7 @@ export function VideoEmbed({ videoId, title = "Showreel" }: VideoEmbedProps) {
         </button>
       ) : (
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&start=${start}`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
