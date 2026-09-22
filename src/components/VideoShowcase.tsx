@@ -30,7 +30,7 @@ export function VideoShowcase({ videos }: VideoShowcaseProps) {
         key={`${activeVideo.id}-${activeVideo.start ?? 0}`}
         videoId={activeVideo.id}
         title={activeVideo.title}
-        start={activeVideo.start}
+        {...(activeVideo.start === undefined ? {} : { start: activeVideo.start })}
       />
 
       <div className="mt-5 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 sm:gap-3">
