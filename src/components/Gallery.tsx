@@ -30,13 +30,15 @@ export function Gallery({ images }: GalleryProps) {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
         {images.map((image, i) => (
           <button
             key={i}
             type="button"
             onClick={() => openAt(i)}
-            className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className={`group relative overflow-hidden rounded-xl border border-border bg-card focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring ${
+              i === 0 || i === 5 ? "col-span-2 aspect-[16/9] sm:col-span-1 sm:aspect-[4/3]" : "aspect-[4/3]"
+            }`}
           >
             <img
               src={image.src}
