@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/ContactForm";
 import { Gallery } from "@/components/Gallery";
-import { VideoEmbed } from "@/components/VideoEmbed";
+import { PhotoSlider } from "@/components/PhotoSlider";
+import { VideoShowcase, type ShowcaseVideo } from "@/components/VideoShowcase";
 import {
   Flame,
   Sparkles,
@@ -41,7 +42,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Professionelle Spezialeffekte für Hochzeiten, Konzerte, Firmenevents und Open-Airs. Vermietung, Shows, Verkauf und Events aus einer Hand.",
+          "Professionelle Fontänen, Feuerbälle, Bodennebel, Gold Streams, Rauchsäulen, Verbundfeuerwerke und Konfetti für Veranstaltungen in Deutschland.",
       },
       {
         property: "og:title",
@@ -50,7 +51,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Professionelle Spezialeffekte für Hochzeiten, Konzerte, Firmenevents und Open-Airs.",
+          "Professionelle Spezialeffekte und erfahrenes Fachpersonal für Hochzeiten, Stadtfeste, Konzerte und große Bühnen.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -68,18 +69,27 @@ const galleryImages = [
   { src: gallery6, alt: "CO2-Jets und Bühneneffekte beim Konzert" },
 ];
 
+const showcaseVideos: ShowcaseVideo[] = [
+  { id: "ZIFCiAeLvVo", title: "Gala Show – Fontänen und Flammen" },
+  { id: "0PWXGhWEDaA", title: "Gala Show – Bühneneffekte", start: 59 },
+  { id: "_bnVx_E0NKI", title: "Gala Show – Event-Highlights" },
+  { id: "4adufPwsXpY", title: "Gala Show – Showreel", start: 5 },
+];
+
 const services = [
   {
     title: "Vermietung",
     description:
-      "Mieten Sie professionelle Technik für Ihren besonderen Tag. Inklusive fachkundigem Personal mit Zertifikaten — für ein echtes Sorglos-Paket.",
+      "Professionelle Spezialeffekte inklusive fachkundigem Personal mit entsprechenden Zertifikaten — als zuverlässiges Sorglos-Paket für Ihre Veranstaltung.",
     image: serviceRentalImage,
     icon: Sparkles,
     features: [
-      "Fontänen bis 5 m Höhe",
+      "Fontänen bis 5,60 Meter",
       "Feuerbälle & Flammen",
       "Bodennebel-Maschinen",
-      "Konfetti & Streamer",
+      "Konfetti & Streamer in Multicolor",
+      "Farbige Rauchsäulen bis 70 Meter",
+      "Zertifiziertes Fachpersonal",
     ],
   },
   {
@@ -237,9 +247,10 @@ function Index() {
             Der Wow-Moment für Ihre Veranstaltung
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-balance text-lg text-foreground/90 sm:text-xl">
-            Professionelle Fontänen, Feuerbälle, Bodennebel und Konfetti für
-            Hochzeiten, Stadtfeste, Konzerte und große Bühnen — mit bis zu 30
-            Maschinen und erfahrenem Fachpersonal.
+            Professionelle Fontänen, Feuerbälle, Bodennebel, Gold Streams und
+            Rauchsäulen bis 70 Meter, gigantische Verbundfeuerwerke Kl. F2 sowie
+            Konfetti für Hochzeiten, Stadtfeste, Konzerte und große Bühnen — mit
+            vielen Effekten und erfahrenem Fachpersonal.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="min-w-[180px]">
@@ -326,7 +337,7 @@ function Index() {
                       <p className="mt-3 text-muted-foreground">
                         {service.description}
                       </p>
-                      <ul className="mt-5 grid grid-cols-2 gap-2 text-sm text-muted-foreground">
+                       <ul className={`mt-5 grid gap-2 text-sm text-muted-foreground ${index === 0 ? "sm:grid-cols-2" : "grid-cols-2"}`}>
                         {service.features.map((feature) => (
                           <li key={feature} className="flex items-center gap-2">
                             <span className="size-1.5 rounded-full bg-primary" />
@@ -393,7 +404,7 @@ function Index() {
                 </div>
                 <div>
                   <div className="font-display text-4xl font-bold text-primary">
-                    5m
+                     5,60 m
                   </div>
                   <div className="mt-1 text-sm text-muted-foreground">
                     Fontänenhöhe
@@ -418,14 +429,14 @@ function Index() {
         <div className="container-tight">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Unsere Showreel
+              Unsere Showreels
             </h2>
             <p className="mt-4 text-muted-foreground">
               Ein Eindruck von dem, was wir auf die Bühne bringen.
             </p>
           </div>
           <div className="mt-12">
-            <VideoEmbed videoId="4adufPwsXpY" title="Gala Show Showreel" />
+            <VideoShowcase videos={showcaseVideos} />
           </div>
         </div>
       </section>
@@ -441,8 +452,28 @@ function Index() {
               Einblicke in unsere Shows, Effekte und Events.
             </p>
           </div>
-          <div className="mt-12">
-            <Gallery images={galleryImages} />
+          <div className="mt-12 space-y-16">
+            <div>
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-px flex-1 bg-border" />
+                <h3 className="shrink-0 font-display text-lg font-semibold text-foreground sm:text-xl">
+                  Variante A – Slider
+                </h3>
+                <span className="h-px flex-1 bg-border" />
+              </div>
+              <PhotoSlider images={galleryImages} />
+            </div>
+
+            <div>
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-px flex-1 bg-border" />
+                <h3 className="shrink-0 font-display text-lg font-semibold text-foreground sm:text-xl">
+                  Variante B – Galerie
+                </h3>
+                <span className="h-px flex-1 bg-border" />
+              </div>
+              <Gallery images={galleryImages} />
+            </div>
           </div>
         </div>
       </section>
