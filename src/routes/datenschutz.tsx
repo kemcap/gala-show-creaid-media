@@ -29,8 +29,7 @@ export const Route = createFileRoute("/datenschutz")({
 const blind =
   "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
 
-const sections = [
-  "1. Datenschutz auf einen Blick",
+const restSections = [
   "3. Hosting",
   "4. Kontaktaufnahme",
   "5. Kontaktformular",
@@ -44,7 +43,7 @@ const sections = [
 ];
 
 function Datenschutz() {
-  const [first, ...rest] = sections;
+
 
   return (
     <SubPageShell>
