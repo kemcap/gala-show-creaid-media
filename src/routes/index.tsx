@@ -189,10 +189,17 @@ function Index() {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/partner"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Partner
+            </Link>
             <Button asChild size="sm">
               <a href="#contact">Anfragen</a>
             </Button>
           </nav>
+
 
           <button
             type="button"
