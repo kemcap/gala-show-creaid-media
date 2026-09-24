@@ -563,9 +563,16 @@ function Index() {
               </p>
             </div>
             <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+              <Link to="/partner" className="hover:text-foreground">
+                Partner
+              </Link>
               <Link to="/impressum" className="hover:text-foreground">
                 Impressum
               </Link>
+              <Link to="/datenschutz" className="hover:text-foreground">
+                Datenschutz
+              </Link>
+
               <a href="#services" className="hover:text-foreground">
                 Leistungen
               </a>
