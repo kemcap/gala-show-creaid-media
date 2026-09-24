@@ -58,7 +58,7 @@ function Datenschutz() {
             den tatsächlich eingesetzten Diensten abgestimmt werden.
           </PlaceholderNotice>
 
-          <LegalSection title={first}>
+          <LegalSection title="1. Datenschutz auf einen Blick">
             <p>{blind}</p>
           </LegalSection>
 
@@ -76,7 +76,7 @@ function Datenschutz() {
             </p>
           </LegalSection>
 
-          {rest.map((title) => (
+          {restSections.map((title) => (
             <LegalSection key={title} title={title}>
               <p>{blind}</p>
             </LegalSection>
