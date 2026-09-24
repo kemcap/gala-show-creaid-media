@@ -189,10 +189,17 @@ function Index() {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/partner"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Partner
+            </Link>
             <Button asChild size="sm">
               <a href="#contact">Anfragen</a>
             </Button>
           </nav>
+
 
           <button
             type="button"
@@ -217,6 +224,14 @@ function Index() {
                   {link.label}
                 </a>
               ))}
+              <Link
+                to="/partner"
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Partner
+              </Link>
+
               <Button asChild className="w-full">
                 <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
                   Anfragen
@@ -548,9 +563,16 @@ function Index() {
               </p>
             </div>
             <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+              <Link to="/partner" className="hover:text-foreground">
+                Partner
+              </Link>
               <Link to="/impressum" className="hover:text-foreground">
                 Impressum
               </Link>
+              <Link to="/datenschutz" className="hover:text-foreground">
+                Datenschutz
+              </Link>
+
               <a href="#services" className="hover:text-foreground">
                 Leistungen
               </a>
