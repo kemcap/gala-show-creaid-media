@@ -224,6 +224,14 @@ function Index() {
                   {link.label}
                 </a>
               ))}
+              <Link
+                to="/partner"
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Partner
+              </Link>
+
               <Button asChild className="w-full">
                 <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
                   Anfragen
